@@ -1,4 +1,7 @@
 export const color = {
   bgBlue: '#448AFF',
-  textWhite: '#FFFFFF'
+  bgGray: '#EBECF0',
+  bgBlack: '#333333',
+  textWhite: '#FFFFFF',
+  textBlack: '#333333'
 } as const;
