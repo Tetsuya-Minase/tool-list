@@ -5,4 +5,4 @@ export default {
   component: CardList
 }
 
-export const Default = () => <CardList title="Todo"/>;
+export const Default = () => <CardList title="Todo" list={[]}/>;

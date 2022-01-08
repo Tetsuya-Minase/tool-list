@@ -5,7 +5,7 @@ import {fontSize} from "../../styles/font-size";
 
 const CardListWrapper = styled.section`
   background-color: ${color.bgGray};
-  padding: 20px 20px 0;
+  padding: 20px 20px 8px;
   width: 420px;
   border-radius: 8px;
 `;
@@ -29,15 +29,38 @@ const Badge = styled.span`
   height: 28px;
   margin-left: 12px;
 `;
+const AddButton = styled.button`
+  font-weight: bold;
+  font-size: ${fontSize(16)};
+  color: ${color.textBlack};
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  border: none;
+  
+  &::before, ::after {
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    content: '';
+    border: 1px solid ${color.textBlack};
+    width: 16px;
+  }
+  &::after {
+    transform: rotateZ(90deg);
+  }
+`;
 
 interface Props {
   title: string;
+  list: string[];
 }
-export const CardList: React.VFC<Props> = ({title}) => {
+export const CardList: React.VFC<Props> = ({title, list}) => {
   return <CardListWrapper>
     <TitleWrapper>
       <Title>{title}</Title>
       <Badge>10</Badge>
     </TitleWrapper>
+    <AddButton>カードを追加</AddButton>
   </CardListWrapper>
 };
