@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "linaria": "^2.3.1",
+    "linaria": "^3.0.0-beta.17",
     "next": "12.0.7",
     "next-linaria": "^0.11.0",
     "react": "17.0.2",
