@@ -13,6 +13,10 @@ const ItemButton = styled.button`
   width: 100%;
   text-align: start;
 `;
+const CardTitle = styled.h1`
+  font-size: ${fontSize(16)};
+  font-weight: normal;
+`;
 
 interface Props {
   title: string;
@@ -20,8 +24,10 @@ interface Props {
 
 export const CardListItem: React.VFC<Props> = ({title}) => {
   return <Item>
-    <ItemButton>
-      {title}
-    </ItemButton>
+    <section>
+      <ItemButton>
+        <CardTitle>{title}</CardTitle>
+      </ItemButton>
+    </section>
   </Item>
 }
