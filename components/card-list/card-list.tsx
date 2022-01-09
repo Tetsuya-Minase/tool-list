@@ -1,7 +1,8 @@
 import React from 'react';
 import {styled} from 'linaria/react';
-import {color} from "../../styles/color";
-import {fontSize} from "../../styles/font-size";
+import {color} from '../../styles/color';
+import {fontSize} from '../../styles/font-size';
+import {CardListItem} from './card-list-item';
 
 const CardListWrapper = styled.section`
   background-color: ${color.bgGray};
@@ -35,8 +36,6 @@ const AddButton = styled.button`
   color: ${color.textBlack};
   position: relative;
   padding-left: 20px;
-  cursor: pointer;
-  border: none;
   
   &::before, ::after {
     position: absolute;
@@ -50,6 +49,9 @@ const AddButton = styled.button`
     transform: rotateZ(90deg);
   }
 `;
+const ListWrapper = styled.ul`
+  margin: 8px 0;
+`;
 
 interface Props {
   title: string;
@@ -61,6 +63,9 @@ export const CardList: React.VFC<Props> = ({title, list}) => {
       <Title>{title}</Title>
       <Badge>10</Badge>
     </TitleWrapper>
+    <ListWrapper>
+      <CardListItem title="やること1"/>
+    </ListWrapper>
     <AddButton>カードを追加</AddButton>
   </CardListWrapper>
 };
