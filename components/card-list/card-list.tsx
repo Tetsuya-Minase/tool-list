@@ -7,7 +7,7 @@ import {CardListItem} from './card-list-item';
 const CardListWrapper = styled.section`
   background-color: ${color.bgGray};
   padding: 20px 20px 8px;
-  width: 420px;
+  width: 348px;
   border-radius: 8px;
 `;
 const TitleWrapper = styled.div`
