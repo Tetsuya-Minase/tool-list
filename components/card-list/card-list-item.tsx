@@ -9,7 +9,7 @@ const Item = styled.li`
 const ItemButton = styled.button`
   border-radius: 4px;
   background-color: ${color.bgWhite};
-  padding: 16px;
+  padding: 8px 16px;
   width: 100%;
   text-align: start;
 `;
