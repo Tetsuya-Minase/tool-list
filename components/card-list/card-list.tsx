@@ -50,7 +50,10 @@ const AddButton = styled.button`
   }
 `;
 const ListWrapper = styled.ul`
-  margin: 8px 0;
+  margin-top: 8px;
+`;
+const ButtonWrapper = styled.div`
+  margin-top: 8px;
 `;
 
 interface Props {
@@ -66,6 +69,8 @@ export const CardList: React.VFC<Props> = ({title, list}) => {
     <ListWrapper>
       <CardListItem title="やること1"/>
     </ListWrapper>
-    <AddButton>カードを追加</AddButton>
+    <ButtonWrapper>
+      <AddButton>カードを追加</AddButton>
+    </ButtonWrapper>
   </CardListWrapper>
 };
