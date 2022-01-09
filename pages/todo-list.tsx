@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import {CardList} from '../components/card-list/card-list';
+import {PageTitle} from '../components/page-title/page-title';
 
 const CardListWrapper = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ const CardListWrapper = styled.div`
 
 const TodoList: React.VFC = () => {
   return <>
-    <h1>TodoList</h1>
+    <PageTitle>Todo List</PageTitle>
     <CardListWrapper>
       <CardList title="Todo" list={[]} />
       <CardList title="Doing" list={[]} />
