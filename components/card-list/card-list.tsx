@@ -40,7 +40,7 @@ const AddButton = styled.button`
   &::before, ::after {
     position: absolute;
     left: 2px;
-    top: 11px;
+    top: 9px;
     content: '';
     border: 1px solid ${color.textBlack};
     width: 16px;
