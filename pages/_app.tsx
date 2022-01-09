@@ -1,4 +1,4 @@
-import 'modern-css-reset';
+import 'modern-normalize/modern-normalize.css';
 import type {AppProps} from 'next/app'
 import {Header} from "../components/header/header";
 
