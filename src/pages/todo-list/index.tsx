@@ -1,14 +1,14 @@
-import React from 'react';
 import { styled } from 'linaria/react';
 import { CardList } from '../../components/card-list/card-list';
 import { PageTitle } from '../../components/page-title/page-title';
+import { NextPage } from 'next';
 
 const CardListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const TodoList: React.VFC = () => {
+const TodoList: NextPage = () => {
   return (
     <>
       <PageTitle>Todo List</PageTitle>
