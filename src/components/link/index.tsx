@@ -7,9 +7,6 @@ type Props = React.ComponentProps<'a'> & {
 };
 
 export const Link: React.FC<Props> = ({ href, text }) => {
-  if (!href) {
-    return <span>{text}</span>;
-  }
   return (
     <NextLink href={href}>
       <a>{text}</a>
