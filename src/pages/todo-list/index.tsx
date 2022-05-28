@@ -1,5 +1,5 @@
 import { styled } from 'linaria/react';
-import { CardList } from '../../components/card-list/card-list';
+import { CardList } from '../../features/todo-list/components/card-list';
 import { PageTitle } from '../../components/page-title/page-title';
 import { NextPage } from 'next';
 
