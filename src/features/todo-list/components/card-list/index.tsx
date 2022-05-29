@@ -1,8 +1,8 @@
 import React from 'react';
-import {styled} from 'linaria/react';
-import {color} from '../../styles/color';
-import {fontSize} from '../../styles/font-size';
-import {CardListItem} from './card-list-item';
+import { styled } from 'linaria/react';
+import { color } from '../../../../styles/color';
+import { fontSize } from '../../../../styles/font-size';
+import { CardListItem } from './card-list-item';
 
 const CardListWrapper = styled.section`
   background-color: ${color.bgGray};
@@ -36,8 +36,9 @@ const AddButton = styled.button`
   color: ${color.textBlack};
   position: relative;
   padding-left: 20px;
-  
-  &::before, ::after {
+
+  &::before,
+  ::after {
     position: absolute;
     left: 2px;
     top: 9px;
@@ -60,17 +61,19 @@ interface Props {
   title: string;
   list: string[];
 }
-export const CardList: React.VFC<Props> = ({title, list}) => {
-  return <CardListWrapper>
-    <TitleWrapper>
-      <Title>{title}</Title>
-      <Badge>10</Badge>
-    </TitleWrapper>
-    <ListWrapper>
-      <CardListItem title="やること1"/>
-    </ListWrapper>
-    <ButtonWrapper>
-      <AddButton>カードを追加</AddButton>
-    </ButtonWrapper>
-  </CardListWrapper>
+export const CardList: React.FC<Props> = ({ title, list }) => {
+  return (
+    <CardListWrapper>
+      <TitleWrapper>
+        <Title>{title}</Title>
+        <Badge>10</Badge>
+      </TitleWrapper>
+      <ListWrapper>
+        <CardListItem title="やること1" />
+      </ListWrapper>
+      <ButtonWrapper>
+        <AddButton>カードを追加</AddButton>
+      </ButtonWrapper>
+    </CardListWrapper>
+  );
 };
