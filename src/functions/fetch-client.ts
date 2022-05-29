@@ -27,7 +27,7 @@ export async function getClient<T = unknown>({ url, query, headers }: GetParams)
 }
 
 function addQueryParameter(url: string, query?: Record<string, unknown>): string {
-  const urlWithQuery = new URL(url);
+  const urlWithQuery = new URL(`http://localhost:3000${url}`);
   if (query) {
     Object.entries(query).forEach(([key, value]) => urlWithQuery.searchParams.append(key, String(value)));
   }
