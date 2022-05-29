@@ -63,7 +63,6 @@ interface Props {
   readonly items: ReadonlyArray<Todo>;
 }
 export const CardList: React.FC<Props> = ({ title, items }) => {
-  console.log('items: ', items);
   return (
     <CardListWrapper>
       <TitleWrapper>
