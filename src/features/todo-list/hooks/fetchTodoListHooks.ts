@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 import { getClient } from '../../../functions/fetch-client';
+import { ListResponse } from '../../../types/ApiResponse';
+import { Todo } from '../model/Todo';
 
-export const useFetchTodoList = () => {
-  const [result, setResult] = useState();
+export function useFetchTodoList() {
+  const [result, setResult] = useState<Todo[]>([]);
+  const [offset] = useState(0);
   useEffect(() => {
-    getClient({ url: '/api/todos' }).then((result) => {
+    const query = offset ? { offset } : undefined;
+    getClient<ListResponse<Todo>>({ url: '/api/todos', query }).then((result) => {
       if (result.isSuccess) {
-        console.log(result.response);
-        setResult(result.response as any);
+        setResult(result.response.data);
       }
     });
-  }, []);
+  }, [offset]);
   return { result };
-};
+}
