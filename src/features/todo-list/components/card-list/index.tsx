@@ -3,6 +3,7 @@ import { styled } from 'linaria/react';
 import { color } from '../../../../styles/color';
 import { fontSize } from '../../../../styles/font-size';
 import { CardListItem } from './card-list-item';
+import { Todo } from '../../model/Todo';
 
 const CardListWrapper = styled.section`
   background-color: ${color.bgGray};
@@ -58,19 +59,21 @@ const ButtonWrapper = styled.div`
 `;
 
 interface Props {
-  title: string;
-  list: string[];
+  readonly title: string;
+  readonly items: ReadonlyArray<Todo>;
 }
-export const CardList: React.FC<Props> = ({ title, list }) => {
+export const CardList: React.FC<Props> = ({ title, items }) => {
   return (
     <CardListWrapper>
       <TitleWrapper>
         <Title>{title}</Title>
-        <Badge>10</Badge>
+        <Badge>{items.length}</Badge>
       </TitleWrapper>
-      <ListWrapper>
-        <CardListItem title="やること1" />
-      </ListWrapper>
+      {items.map((item) => (
+        <ListWrapper key={item.id}>
+          <CardListItem title={item.title} />
+        </ListWrapper>
+      ))}
       <ButtonWrapper>
         <AddButton>カードを追加</AddButton>
       </ButtonWrapper>
