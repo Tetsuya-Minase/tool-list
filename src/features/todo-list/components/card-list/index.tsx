@@ -67,7 +67,7 @@ export const CardList: React.FC<Props> = ({ title, items }) => {
     <CardListWrapper>
       <TitleWrapper>
         <Title>{title}</Title>
-        <Badge>10</Badge>
+        <Badge>{items.length}</Badge>
       </TitleWrapper>
       {items.map((item) => (
         <ListWrapper key={item.id}>
