@@ -7,6 +7,7 @@ import { getClient } from '../../functions/fetch-client';
 import { ListResponse } from '../../types/ApiResponse';
 import { Todo } from '../../features/todo-list/model/Todo';
 import { ClassifiedTodos } from '../../features/todo-list/model/ClassifiedTodos';
+import { TodoListProvider } from '../../features/todo-list/store';
 
 const CardListWrapper = styled.div`
   display: flex;
@@ -19,14 +20,14 @@ interface Props {
 
 const TodoList: NextPage<Props> = ({ todoList }) => {
   return (
-    <>
+    <TodoListProvider initialState={{ classifiedTodos: todoList }}>
       <PageTitle>Todo List</PageTitle>
       <CardListWrapper>
         <CardList title="Todo" items={todoList.todo} />
         <CardList title="Doing" items={todoList.doing} />
         <CardList title="Done" items={todoList.done} />
       </CardListWrapper>
-    </>
+    </TodoListProvider>
   );
 };
 
